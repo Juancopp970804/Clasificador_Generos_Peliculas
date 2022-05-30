@@ -3,9 +3,11 @@ from flask import Flask
 from flask_restx import Api, Resource, fields
 import joblib
 from gensim.models import KeyedVectors
+import gensim.downloader as api
 from Clasificador_Peliculas import generar_Clasificacion
 
-TL_Words_vectors = KeyedVectors.load_word2vec_format("GoogleNews-vectors-negative300.bin", binary=True)
+#TL_Words_vectors = KeyedVectors.load_word2vec_format("GoogleNews-vectors-negative300.bin", binary=True)
+TL_Words_vectors = api.load('word2vec-google-news-300')
 
 app = Flask(__name__)
 
