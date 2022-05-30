@@ -2,8 +2,8 @@
 from flask import Flask
 from flask_restx import Api, Resource, fields
 import joblib
-from gensim.models import KeyedVectors
-import gensim.downloader as api
+#from gensim.models import KeyedVectors
+#import gensim.downloader as api
 import pickle
 from Clasificador_Peliculas import generar_Clasificacion
 
