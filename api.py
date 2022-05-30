@@ -4,10 +4,13 @@ from flask_restx import Api, Resource, fields
 import joblib
 from gensim.models import KeyedVectors
 import gensim.downloader as api
+import pickle
 from Clasificador_Peliculas import generar_Clasificacion
 
 #TL_Words_vectors = KeyedVectors.load_word2vec_format("GoogleNews-vectors-negative300.bin", binary=True)
-TL_Words_vectors = api.load('word2vec-google-news-300')
+#TL_Words_vectors = api.load('word2vec-google-news-300')
+with open('saved_dictionary.pkl', 'rb') as f:
+    TL_Words_vectors = pickle.load(f)
 
 app = Flask(__name__)
 
